@@ -1,25 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Navbar from './components/Navbar/Navbar';
+import {Route, withRouter} from 'react-router-dom';
+import Landing from './components/Landing/Landing';
+import Callback from './Callback';
 
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
+class App extends Component {
+  constructor(props){
+    super(props);
     
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      this.state = {
+        checksesh:true 
+      }
+  }
+  render() {
+    return (
+      <div>
+        <Navbar/>
+        <Route exact path='/' component={Landing}/>
+        <Route exact path='/callback' component={Callback}/>
+        
+      </div>
+    );
+  }
 }
 
-export default App;
+export default withRouter(App);
