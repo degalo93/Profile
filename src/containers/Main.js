@@ -6,9 +6,9 @@ import Homepage from "../components/Homepage"
 const Main = props => {
     const { errors } = props
     return(
-        <div className = "container">
+        <div className = "containerM">
             <Switch>
-                <Route exact path="/home" component = {Homepage} />
+                <Route exact path="/" component = {Homepage} />
             </Switch>
         </div>
     );
